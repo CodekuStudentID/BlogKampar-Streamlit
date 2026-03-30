@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+// 1. Tambahkan import ini
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+// 2. Tambahkan "implements FilamentUser" agar dikenali oleh Filament
+class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable;
 
@@ -43,5 +46,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * 3. Tambahkan fungsi ini untuk menentukan siapa yang boleh masuk Dashboard Admin
+     */
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Ganti 'admin@email.com' dengan email asli Anda agar bisa masuk
+        // Atau gunakan logika lain, misal: return str_ends_with($this->email, '@admin.com');
+        return $this->email === 'admin@gmail.com';
     }
 }

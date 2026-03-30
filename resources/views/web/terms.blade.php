@@ -2,8 +2,6 @@
 @section('content')
 <div class="bg-gray-50 min-h-screen py-12 md:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-<x-dynamicpath />
         <article class="bg-white shadow-xl shadow-green-900/5 border border-gray-100 rounded-3xl p-8 md:p-12">
 
             <header class="border-b border-gray-100 pb-8 mb-10">

@@ -37,14 +37,14 @@ class PostResource extends Resource
 
             Forms\Components\Select::make('category')
                 ->options([
-                    'nasional' => 'Nasional',
-                    'internasional' => 'Internasional',
-                    'ekonomi' => 'Ekonomi',
-                    'budaya' => 'Budaya',
-                    'olahraga' => 'Olahraga',
-                    'teknologi' => 'Teknologi',
-                    'hiburan' => 'Hiburan',
-                    'lifestyle' => 'Lifestyle',
+                    'nasional' => 'nasional',
+                    'internasional' => 'internasional',
+                    'ekonomi' => 'ekonomi',
+                    'budaya' => 'budaya',
+                    'olahraga' => 'olahraga',
+                    'teknologi' => 'teknologi',
+                    'hiburan' => 'hiburan',
+                    'lifestyle' => 'lifestyle',
                 ])
                 ->required()
                 ->native(false), // Membuat tampilan select jadi lebih modern

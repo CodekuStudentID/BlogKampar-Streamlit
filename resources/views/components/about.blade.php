@@ -1,6 +1,5 @@
 <div>
     <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <x-dynamicpath />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             <!-- Kolom Kiri: Teks Narasi -->

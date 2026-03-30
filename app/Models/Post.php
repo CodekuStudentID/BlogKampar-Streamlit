@@ -20,6 +20,7 @@ class Post extends Model
         'date',
         'images',
         'views',
-        'likes'
+        'likes',
+        'category'
     ];
 }
