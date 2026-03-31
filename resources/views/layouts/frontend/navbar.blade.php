@@ -11,8 +11,17 @@
     @livewireStyles
 
     </head>
+<body class="bg-white text-slate-900 antialiased relative overflow-x-hidden">
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-white">
 
-<body class="bg-gray-50 text-gray-900">
+    <div class="absolute -top-[5%] -left-[10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-emerald-400/20 rounded-full blur-[80px] md:blur-[150px] animate-pulse"></div>
+
+    <div class="hidden md:block absolute top-[20%] -right-[10%] w-[700px] h-[700px] bg-green-300/25 rounded-full blur-[160px]"></div>
+
+    <div class="absolute -bottom-[10%] left-1/2 -translate-x-1/2 md:left-[10%] md:translate-x-0 w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-emerald-500/15 rounded-full blur-[100px] md:blur-[140px]"></div>
+
+    <div class="absolute inset-0 bg-white/30 backdrop-blur-[40px] md:backdrop-blur-[80px]"></div>
+</div>
 
     <nav x-data="{ open: false, userMenu: false }" class="bg-white/80 backdrop-blur-md border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

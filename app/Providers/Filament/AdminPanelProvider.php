@@ -30,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->spa()
             ->login()
+            ->passwordReset()
             ->navigationItems([
             NavigationItem::make('Lihat Website')
                 ->url(url('/dunia-kampar'), shouldOpenInNewTab: false) // nilai True : akan Membuka di tab baru

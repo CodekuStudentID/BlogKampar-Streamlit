@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Comments;
 
 class Post extends Model
 {
@@ -23,4 +24,8 @@ class Post extends Model
         'likes',
         'category'
     ];
+
+    public function comments(){
+        return $this->hasMany(Comments::class)->orderBy('created_at', 'desc');
+    }
 }

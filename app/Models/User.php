@@ -57,4 +57,8 @@ class User extends Authenticatable implements FilamentUser
         // Atau gunakan logika lain, misal: return str_ends_with($this->email, '@admin.com');
         return $this->email === 'admin@gmail.com';
     }
+
+    public function comments() {
+    return $this->hasMany(Comments::class);
+}
 }

@@ -33,6 +33,33 @@
                         Category : {{$post->category}}
                     </span>
                 </div>
+
+<hr class="my-10 border-gray-100">
+
+{{-- Di bawah isi artikel --}}
+<div class="max-w-3xl mx-auto">
+    @livewire('post-comment', ['postId' => $post->id])
+</div>
+
+{{-- List Komentar yang Sudah Ada --}}
+<div class="space-y-6 mb-10">
+    <h3 class="text-lg font-black uppercase tracking-tight">Komentar ({{ $post->comments->count() }})</h3>
+    @forelse($post->comments as $comment)
+        <div class="flex gap-4 p-4 bg-white rounded-2xl border border-gray-50 shadow-sm">
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold uppercase">
+                {{ substr($comment->name, 0, 1) }}
+            </div>
+            <div>
+                <h4 class="font-bold text-sm">{{ $comment->name }}</h4>
+                <p class="text-xs text-gray-400 mb-2">{{ $comment->created_at->diffForHumans() }}</p>
+                <p class="text-sm text-gray-600 leading-relaxed">{{ $comment->body }}</p>
+            </div>
+        </div>
+    @empty
+        <p class="text-sm text-gray-400 italic">Belum ada komentar. Jadilah yang pertama!</p>
+    @endforelse
+</div>
+
             </div>
 
             <!-- 🔵 RIGHT: POPULAR POSTS -->
