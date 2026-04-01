@@ -35,10 +35,12 @@
                 </div>
 
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ route('web.about') }}" class="text-sm font-medium text-gray-600 hover:text-green-600 transition" wire:navigate>About</a>
                     <a href="{{ route('web.privacy') }}" class="text-sm font-medium text-gray-600 hover:text-green-600 transition" wire:navigate>Privacy Policy</a>
                     <a href="{{ route('web.terms') }}" class="text-sm font-medium text-gray-600 hover:text-green-600 transition" wire:navigate>Terms Of Services</a>
 
                     <div class="h-6 w-px bg-gray-200 mx-2"></div>
+                     <livewire:search-posts />
 
                     @auth
                         <div class="relative">
@@ -89,6 +91,7 @@
              class="md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-3"
              style="display: none;">
 
+             <a href="{{ route('web.about') }}" class="text-sm font-medium text-gray-600 hover:text-green-600 transition" wire:navigate>About</a>
             <a href="{{ route('web.privacy') }}" class="block text-base font-medium text-gray-700 hover:text-green-600" wire:navigate>Privacy Policy</a>
             <a href="{{ route('web.terms') }}" class="block text-base font-medium text-gray-700 hover:text-green-600" wire:navigate>Terms Of Services</a>
 

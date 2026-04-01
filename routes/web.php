@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtisanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebsiteController;
@@ -35,5 +36,11 @@ Route::post('/dunia-kampar/kabar/likes', [WebsiteController::class, 'likes'])->n
 
 Route::get('/dunia-kampar/privacy-policy', [WebsiteController::class, 'Privacy'])->name('web.privacy');
 Route::get('/dunia-kampar/terms-of-services', [WebsiteController::class, 'Terms'])->name('web.terms');
+Route::get('/dunia-kampar/about', [WebsiteController::class, 'About'])->name('web.about');
+
+// Jalankan ini dulu untuk tes koneksi
+Route::get('/cek-koneksi', [ArtisanController::class, 'test']);
+// Jalankan ini saat sudah di hosting (Satu link untuk semua command)
+Route::get('/gas-deploy', [ArtisanController::class, 'deploy']);
 
 require __DIR__.'/auth.php';

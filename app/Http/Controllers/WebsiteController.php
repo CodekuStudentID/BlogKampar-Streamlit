@@ -10,9 +10,14 @@ class WebsiteController extends Controller
     public function index(Post $post){
         $mostPopular = Post::orderBy('views', 'desc')->first();
         $topPosts = Post::orderBy('views', 'desc')->take(8)->get();
-        $newPosts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $newPosts = Post::orderBy('created_at', 'desc')->paginate(3);
+        $nasionalPost = Post::where('category', 'nasional')->take(3)->get();
+        $culturePost = Post::where('category', 'budaya')->latest()->get();
+        $teknologiPost = Post::where('category', 'teknologi')->take(3)->get();
+        $ekonomiPost = Post::where('category', 'ekonomi')->take(3)->get();
+        $olahragaPost = Post::where('category', 'olahraga')->take(3)->get();
 
-        return view('web.home', compact('mostPopular', 'topPosts', 'newPosts'));
+        return view('web.home', compact('mostPopular', 'topPosts', 'newPosts', 'nasionalPost', 'culturePost', 'teknologiPost', 'ekonomiPost', 'olahragaPost'));
     }
 
     public function show($slug){
@@ -42,5 +47,9 @@ class WebsiteController extends Controller
 
      public function Terms(){
         return view('web.terms');
+    }
+
+     public function About(){
+        return view('web.about');
     }
 }

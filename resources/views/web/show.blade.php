@@ -6,7 +6,6 @@
             <img src="{{ asset('storage/' . $post->images) }}" alt="{{ $post->title }}"
                 class="w-full h-[400px] object-cover rounded-xl" loading="lazy">
         </div>
-        <x-dynamicpath />
 
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
