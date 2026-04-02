@@ -15,15 +15,13 @@ class SearchPosts extends Component
 
     public function render()
     {
-        $results = collect();
-
-        // Hanya cari jika ada minimal 2 karakter
+        $results = [];
         if (strlen($this->search) >= 2) {
             $results = Post::where('title', 'like', '%' . $this->search . '%')
-                        ->orWhere('content', 'like', '%' . $this->search . '%')
-                        ->latest()
-                        ->take(8) // Batasi hasil agar dropdown tidak terlalu panjang
-                        ->get();
+                ->orWhere('content', 'like', '%' . $this->search . '%')
+                ->latest()
+                ->take(8)
+                ->get();
         }
 
         return view('livewire.search-posts', [

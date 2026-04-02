@@ -24,7 +24,7 @@
                 <h1 class="text-3xl md:text-6xl font-black text-white mb-6 leading-[1.1] tracking-tight">
                     Selamat datang di <br class="hidden md:block">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
-                        DuniaKampar.my.id
+                        Bulletin-Kampar.my.id
                     </span>
                 </h1>
 

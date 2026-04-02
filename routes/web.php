@@ -8,10 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 use function Laravel\Prompts\text;
 
-Route::get('/dunia-kampar', function () {
-    return view('web.home');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,13 +26,16 @@ Route::get('/testing', function() {
 // Route::get('/postingan/baru', [PostController::class, 'GetForm'])->name('post.form');
 // Route::post('/postingan/baru/ditambahkan', [PostController::class, 'store'])->name('post.store');
 
-Route::get('/dunia-kampar', [WebsiteController::class, 'index'])->name('web.index');
-Route::get('/dunia-kampar/berita/{slug}', [WebsiteController::class, 'show'])->name('web.show');
-Route::post('/dunia-kampar/kabar/likes', [WebsiteController::class, 'likes'])->name('web.likes');
+Route::get('/', [WebsiteController::class, 'index'])->name('web.index');
+Route::get('/berita/{slug}', [WebsiteController::class, 'show'])->name('web.show');
+Route::post('/kabar/likes', [WebsiteController::class, 'likes'])->name('web.likes');
 
-Route::get('/dunia-kampar/privacy-policy', [WebsiteController::class, 'Privacy'])->name('web.privacy');
-Route::get('/dunia-kampar/terms-of-services', [WebsiteController::class, 'Terms'])->name('web.terms');
-Route::get('/dunia-kampar/about', [WebsiteController::class, 'About'])->name('web.about');
+Route::get('/privacy-policy', [WebsiteController::class, 'Privacy'])->name('web.privacy');
+Route::get('/terms-of-services', [WebsiteController::class, 'Terms'])->name('web.terms');
+Route::get('/about', [WebsiteController::class, 'About'])->name('web.about');
+Route::get('/contacts', [WebsiteController::class, 'Contacts'])->name('web.contacts');
+
+Route::get('/category/{slug}', [WebsiteController::class, 'categoryPost'])->name('web.category');
 
 // Jalankan ini dulu untuk tes koneksi
 Route::get('/cek-koneksi', [ArtisanController::class, 'test']);

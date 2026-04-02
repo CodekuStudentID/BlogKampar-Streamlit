@@ -1,69 +1,76 @@
-  {{-- resources/views/footer.blade.php --}}
-  <footer class="bg-gray-900 text-white pt-10 pb-6">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+{{-- resources/views/footer.blade.php --}}
+<footer class="bg-gray-900 text-white pt-10 pb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {{-- Logo & Deskripsi --}}
-          <div>
-             <a href="{{route('web.index')}}" class="flex items-center space-x-2 text-green-600 font-bold text-2xl">
-                    <img src="{{ asset('img/logo-kampar.png') }}" width="20" height="40" alt=""
-                        srcset="">
-                    <span>Kampar Channel</span>
+        {{-- Logo & Deskripsi --}}
+        <div>
+            <div class="flex items-center space-x-3 mb-4">
+                {{-- Logo 1: Logo Kampar --}}
+                <img src="{{ asset('img/logo-kampar.png') }}" class="h-10 w-auto" alt="Logo Kampar">
+
+                {{-- Logo 2: Logo Bulletin Kampar (Ganti path-nya sesuai file kamu) --}}
+                <img src="{{ asset('img/1774678106345-removebg-preview.png') }}" class="h-10 w-auto" alt="Logo Bulletin Kampar">
+
+                <div class="border-l border-gray-700 pl-3">
+                    <span class="block text-green-500 font-bold text-xl leading-none">Bulletin</span>
+                    <span class="block text-white font-medium text-sm tracking-widest uppercase">Kampar</span>
+                </div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Portal berita terpercaya dari Jantung Negeri Kampar. Menyajikan informasi terkini seputar Air Tiris, Kabupaten Kampar, hingga berita Nasional dengan akurasi tinggi.
+            </p>
+        </div>
+
+        {{-- Link Cepat --}}
+        <div>
+            <h4 class="text-white font-semibold mb-4 border-b border-gray-800 pb-2">Link Cepat</h4>
+            <ul class="grid grid-cols-2 gap-2 text-gray-400 text-sm">
+                <li><a href="/" class="hover:text-green-500 transition">Home</a></li>
+                <li><a href="/nasional" class="hover:text-green-500 transition">Nasional</a></li>
+                <li><a href="/ekonomi" class="hover:text-green-500 transition">Ekonomi</a></li>
+                <li><a href="/teknologi" class="hover:text-green-500 transition">Teknologi</a></li>
+                <li><a href="/olahraga" class="hover:text-green-500 transition">Olahraga</a></li>
+                <li><a href="/hiburan" class="hover:text-green-500 transition">Hiburan</a></li>
+                <li><a href="/lifestyle" class="hover:text-green-500 transition">Lifestyle</a></li>
+                <li><a href="/internasional" class="hover:text-green-500 transition">Internasional</a></li>
+            </ul>
+        </div>
+
+        {{-- Kontak & Sosial Media --}}
+        <div>
+            <h4 class="text-white font-semibold mb-4 border-b border-gray-800 pb-2">Kontak Redaksi</h4>
+            <div class="text-gray-400 text-sm space-y-2 mb-4">
+                <p class="flex items-center"><i class="fas fa-envelope mr-2 text-green-500"></i> bulletinkampar@gmail.com</p>
+                <p class="flex items-center"><i class="fab fa-whatsapp mr-2 text-green-500"></i> 0821-7711-216</p>
+                <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-green-500"></i> Air Tiris, Kampar, Riau</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                    <i class="fab fa-facebook-f text-xs"></i>
                 </a>
-              <p class="text-gray-400 text-sm">
-                  Portal berita terpercaya, menyajikan informasi terbaru seputar nasional, internasional, ekonomi,
-                  teknologi, olahraga, dan hiburan.
-              </p>
-          </div>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition">
+                    <i class="fab fa-instagram text-xs"></i>
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition">
+                    <i class="fab fa-youtube text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-          {{-- Link Cepat --}}
-          <div>
-              <h4 class="text-white font-semibold mb-4">Link Cepat</h4>
-              <ul class="space-y-2 text-gray-400 text-sm">
-                  <li><a href="/" class="hover:text-red-600">Home</a></li>
-                  <li><a href="/nasional" class="hover:text-red-600">Nasional</a></li>
-                  <li><a href="/internasional" class="hover:text-red-600">Internasional</a></li>
-                  <li><a href="/ekonomi" class="hover:text-red-600">Ekonomi</a></li>
-                  <li><a href="/teknologi" class="hover:text-red-600">Teknologi</a></li>
-                  <li><a href="/olahraga" class="hover:text-red-600">Olahraga</a></li>
-                  <li><a href="/hiburan" class="hover:text-red-600">Hiburan</a></li>
-                  <li><a href="/lifestyle" class="hover:text-red-600">Lifestyle</a></li>
-              </ul>
-          </div>
+    {{-- Bottom Footer --}}
+    <div class="border-t border-gray-800 mt-10 pt-6">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <p>&copy; 2026 <span class="text-white font-semibold">Bulletin Kampar</span>. All rights reserved.</p>
 
-          {{-- Kontak & Sosial Media --}}
-          <div>
-              <h4 class="text-white font-semibold mb-4">Kontak Kami</h4>
-              <p class="text-gray-400 text-sm mb-2">Email: info@newsportal.com</p>
-              <p class="text-gray-400 text-sm mb-4">Telepon: +62 812-3456-7890</p>
-              <div class="flex space-x-4">
-                  <a href="#" class="text-gray-400 hover:text-red-600">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path
-                              d="M24 4.56c-.88.39-1.83.65-2.83.77a4.94 4.94 0 0 0 2.17-2.72 9.92 9.92 0 0 1-3.13 1.2 4.92 4.92 0 0 0-8.39 4.49 13.94 13.94 0 0 1-10.13-5.14 4.91 4.91 0 0 0 1.52 6.56A4.9 4.9 0 0 1 1.64 9.8v.06a4.92 4.92 0 0 0 3.95 4.83 4.93 4.93 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42 9.86 9.86 0 0 1-6.1 2.1c-.4 0-.79-.02-1.18-.07a13.91 13.91 0 0 0 7.53 2.2c9.05 0 14-7.5 14-14 0-.21 0-.42-.01-.63A10.06 10.06 0 0 0 24 4.56z" />
-                      </svg>
-                  </a>
-                  <a href="#" class="text-gray-400 hover:text-red-600">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path
-                              d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.42 3.58 8 8 8h4v-6H12v-2h2V8h-2V6.5c0-.83.67-1.5 1.5-1.5H16V4h-2.5C11.01 4 10 5.01 10 6.5V8H8v2h2v6h-4c-4.42 0-8-3.58-8-8 0-5.52 4.48-10 10-10s10 4.48 10 10c0 5.52-4.48 10-10 10z" />
-                      </svg>
-                  </a>
-                  <a href="#" class="text-gray-400 hover:text-red-600">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path
-                              d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.42 3.58 8 8 8h4v-6h-2v-2h2V8h-2V6.5c0-.83.67-1.5 1.5-1.5H16V4h-2.5C11.01 4 10 5.01 10 6.5V8H8v2h2v6h-4c-4.42 0-8-3.58-8-8 0-5.52 4.48-10 10-10s10 4.48 10 10c0 5.52-4.48 10-10 10z" />
-                      </svg>
-                  </a>
-              </div>
-          </div>
-      </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="{{ route('web.privacy') }}" class="hover:text-green-500 transition" wire:navigate>Privacy Policy</a>
+                <a href="{{ route('web.terms') }}" class="hover:text-green-500 transition" wire:navigate>Terms Of Services</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-      <div class="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
-          &copy; 2026 NewsPortal. All rights reserved.
-      </div>
-  </footer>
-
-  @livewireScripts
-  </body>
-
-  </html>
+@livewireScripts
+</body>
+</html>

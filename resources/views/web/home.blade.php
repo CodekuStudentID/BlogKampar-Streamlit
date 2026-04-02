@@ -78,11 +78,11 @@
   <div class="lg:col-span-5 space-y-4">
     @forelse ($newPosts as $post)
         <div class="group relative flex gap-4 p-3 bg-white hover:bg-emerald-50/50 rounded-2xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 hover:shadow-md">
-            
+
             <div class="relative flex-shrink-0">
                 @if($post->images)
-                    <img src="{{ asset('storage/' . $post->images) }}" 
-                         class="w-28 h-24 object-cover rounded-xl shadow-sm group-hover:rotate-1 transition duration-500" 
+                    <img src="{{ asset('storage/' . $post->images) }}"
+                         class="w-28 h-24 object-cover rounded-xl shadow-sm group-hover:rotate-1 transition duration-500"
                          alt="{{ $post->title }}">
                 @else
                     <div class="w-28 h-24 bg-emerald-100 rounded-xl flex items-center justify-center">
@@ -121,7 +121,7 @@
                             {{ $post->likes }}
                         </span>
                     </div>
-                    
+
                     <a href="{{ route('web.show', $post->slug) }}" class="text-[9px] font-black text-emerald-600 bg-white border border-emerald-200 px-2 py-1 rounded-md group-hover:bg-emerald-600 group-hover:text-white transition-all">
                         BACA
                     </a>
@@ -139,7 +139,7 @@
         </section>
 
         {{-- SECTION 2: BUDAYA & LIFESTYLE (Layout: Horizontal Scroll/Grid Cards) --}}
-        <section class="py-12" x-data="{ 
+               <section class="py-12" x-data="{
     skip: 1,
     next() {
         this.$refs.placeholder.scrollBy({ left: this.$refs.placeholder.firstElementChild.clientWidth + 24, behavior: 'smooth' })
@@ -152,7 +152,7 @@
         <h2 class="text-2xl font-extrabold text-gray-900 border-l-4 border-emerald-600 pl-3 uppercase tracking-tight">
             Budaya & Hiburan
         </h2>
-        
+
         @if($culturePost->count() > 0)
         <div class="flex gap-2">
             <button @click="prev" class="p-2 bg-gray-100 rounded-full hover:bg-emerald-600 hover:text-white transition shadow-sm">
@@ -165,14 +165,14 @@
         @endif
     </div>
 
-    <div 
+    <div
         x-ref="placeholder"
         class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
         style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;"
     >
         @forelse ($culturePost as $post)
             <article class="min-w-[85%] md:min-w-[45%] lg:min-w-[23%] snap-start bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-xl transition-all duration-300">
-                
+
                 <div class="relative h-44 overflow-hidden">
                     <img src="{{ asset('storage/' . $post->images) }}"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -191,11 +191,11 @@
 
                     <div class="flex items-center justify-between mb-4 text-[10px] font-bold text-gray-400 uppercase">
                         <span class="flex items-center gap-1 text-red-500">
-                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path></svg> 
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path></svg>
                             {{ $post->likes }}
                         </span>
                         <span class="flex items-center gap-1">
-                            <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg> 
+                            <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                             {{ number_format($post->views) }}
                         </span>
                     </div>
@@ -252,7 +252,7 @@
                             <img src="{{ asset('storage/' . $post->images) }}"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 alt="{{ $post->title }}">
-                            
+
                             {{-- Date Badge --}}
                             <div class="absolute bottom-0 inset-x-0 bg-black/60 backdrop-blur-sm py-1 text-center">
                                 <span class="text-[8px] font-bold text-white uppercase">
@@ -301,7 +301,7 @@
                         <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">No Content in {{ $section['title'] }}</p>
                     </div>
                 @endforelse
-                
+
                 {{-- Tombol Lihat Semua --}}
                 @if($section['data']->count() > 0)
                     <a href="#" class="block w-full text-center py-2 border border-gray-100 rounded-xl text-[9px] font-black text-gray-400 hover:bg-gray-50 transition uppercase tracking-widest">
